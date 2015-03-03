@@ -31,7 +31,14 @@ task :integration do
 end
 
 # The default rake task should just run it all
-# task default: %w(style integration)
-task default: %w(style)
+task default: %w(style integration)
+# task default: %w(style)
 
 task travis: %w(style)
+
+begin
+  require 'kitchen/rake_tasks'
+  Kitchen::RakeTasks.new
+rescue LoadError
+  puts '>>>>> Kitchen gem not loaded, omitting tasks' unless ENV['CI']
+end
