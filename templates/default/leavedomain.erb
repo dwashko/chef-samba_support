@@ -1,0 +1,8 @@
+#/bin/sh
+echo "joining domain"
+DomainAdmin=<%= @domainadmin %>
+DomainAdminPW=<%= @domainadminpassword %>
+# leave domain
+net ads -U $DomainAdmin%$DomainAdminPW leave 
+
+rm $0

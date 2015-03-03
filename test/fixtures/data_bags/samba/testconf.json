@@ -1,0 +1,27 @@
+{
+  "id": "testconf",
+  "workgroup": "test",
+  "additionalconfigs": {
+    "realm": "TEST.TESTER.NET",
+    "kerberos method": "dedicated keytab",
+    "allow trusted domains": "yes",
+    "winbind use default domain": "no",
+    "winbind separator": "\\\\",
+    "winbind enum users": "no",
+    "winbind enum groups": "no",
+    "winbind nested groups": "yes",
+    "winbind expand groups": "5",
+    "create krb5 conf": "yes",
+    "template shell": "/bin/bash",
+    "idmap cache time": "86400",
+    "idmap negative cache time": "2",
+    "idmap uid": "1677721-3355443",
+    "idmap gid": "1677721-3355443",
+    "idmap config DEV:backend": "rid",
+    "idmap config DEV:range": "10000000-14999999",
+    "idmap config GMTI:backend": "rid",
+    "idmap config GMTI:range": "15000000-24999999",
+    "idmap config US:backend": "rid",
+    "idmap config US:range": "25000000-34999999"
+  }
+}

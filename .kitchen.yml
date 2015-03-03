@@ -1,0 +1,23 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  data_bags_path: test/fixtures/data_bags
+
+platforms:
+  - name: centos-6.6
+
+suites:
+  - name: gmticonf 
+    run_list:
+      - recipe[samba_support::gmtismbconf]
+    attributes: {
+      'samba': {
+        'gmti_data_bag': "samba",
+        'gmti_data_bag_name': "testconf"
+      }
+    }
+
+
